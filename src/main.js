@@ -3,7 +3,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-import pianaStore from './store'
+import pianaStore from './stores/main'
 
 import './assets/main.css'
 
