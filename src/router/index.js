@@ -20,4 +20,24 @@ const router = createRouter({
   ]
 })
 
+const requireAuth = [
+  '/',
+]
+let access = '' /** your access or token key here */
+
+router.beforeEach((to, from, next) => {
+  if (requireAuth.includes(to.path) || requireAuth.includes(to.path)) {
+    next()
+  } else if (!access) {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
+})
+
+// eslint-disable-next-line no-unused-vars
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
+})
+
 export default router
