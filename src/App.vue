@@ -1,10 +1,12 @@
 <script setup>
 // Importing the layout component.
-import Layout from './layout/index.vue'
+import Layout from '@/layout/index.vue'
+import LayoutLogin from '@/layout/loginLayout.vue'
 </script>
 
 <template>
-  <Layout/>
+  <LayoutLogin/>
+  <!-- <Layout/> -->
 </template>
 
 <style scoped>

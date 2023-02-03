@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import LoginView from '../views/login/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: LoginView
     },
     {
       path: '/about',
@@ -18,6 +19,26 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     }
   ]
+})
+
+const requireAuth = [
+  '/',
+]
+let access = '' /** your access or token key here */
+
+router.beforeEach((to, from, next) => {
+  if (requireAuth.includes(to.path) || requireAuth.includes(to.path)) {
+    next()
+  } else if (!access) {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
+})
+
+// eslint-disable-next-line no-unused-vars
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
 })
 
 export default router
