@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "axios": "^1.2.6",
+    "element-plus": "^2.2.29",
+    "node-xlsx": "^0.21.0",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-i18n": "^9.2.2",
