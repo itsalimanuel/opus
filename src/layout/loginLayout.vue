@@ -1,12 +1,11 @@
 <script>
-
 </script>
 
 <template>
     <div class="layout">
         <header header="login">
             <div class="logo">
-                <h2>لوغو</h2>
+                <LogoComponent :size="50" />
             </div>
         </header>
         <routerView/>
