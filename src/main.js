@@ -7,6 +7,7 @@ import pianaStore from './stores/main'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import './assets/main.css'
+import '@/main.scss'
 
 // import {translate} from '@/translate'
 
