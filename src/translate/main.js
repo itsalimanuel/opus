@@ -1,7 +1,6 @@
 import { createTranslate } from 'vue-i18n';
-import { createPinia } from 'pinia';
 
-import { useStore } from '@/stores';
+/* Importing the default language of the element-plus library. */
 import EnglishLocal from 'element-plus/lib/locale/lang/en';
 
 // language number 1
