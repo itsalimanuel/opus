@@ -6,8 +6,14 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'login',
       component: LoginView
+    },
+    {
+      path: '/dashboard',
+      name: 'home',
+      component: () => import('../views/HomeView.vue')
+      // route level code-splitting
     },
     {
       path: '/about',
@@ -22,6 +28,8 @@ const router = createRouter({
 
 const requireAuth = [
   '/',
+  '/dashboard',
+  '/about'
 ]
 let access = '' /** your access or token key here */
 
