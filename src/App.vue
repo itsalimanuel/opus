@@ -5,8 +5,8 @@ import LayoutLogin from '@/layout/loginLayout.vue'
 </script>
 
 <template>
-  <LayoutLogin/>
-  <!-- <Layout/> -->
+  <!-- <LayoutLogin/> -->
+  <Layout/>
 </template>
 
 <style scoped>
