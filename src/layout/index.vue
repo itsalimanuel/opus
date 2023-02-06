@@ -4,8 +4,8 @@
        <Slidebar :isCollapse="isCollapse" class="slide"/>
        <div class="dashboard">
         <nav class="nav">
-            <el-icon v-if="!!isCollapse"  @click="toggleOpen"><ArrowLeftBold /></el-icon>
-            <el-icon  v-else @click="toggleOpen"><ArrowRightBold /></el-icon>
+            <el-icon class="pointer" v-if="!!isCollapse"  @click="toggleOpen"><ArrowLeftBold /></el-icon>
+            <el-icon class="pointer"  v-else @click="toggleOpen"><ArrowRightBold /></el-icon>
             <div class="nav-title">
                 <h2>لوحة التحكم</h2>
             </div>
@@ -17,7 +17,6 @@
                 </div>
                 <div class="nav-list-notify"></div>
             </div>
-            
         </nav>
         <router-view/>
        </div>
@@ -58,5 +57,6 @@ const toggleOpen = () => isCollapse.value =!isCollapse.value
                 margin-right auto
                 &-icon
                     display flex
-
+            .pointer
+                cursor pointer
 </style>
