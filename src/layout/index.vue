@@ -4,8 +4,8 @@
        <Slidebar :isCollapse="isCollapse" class="slide"/>
        <div class="dashboard">
         <nav class="nav">
-            <el-icon v-if="!!isCollapse"  @click="toggleOpen"><ArrowLeftBold /></el-icon>
-            <el-icon  v-else @click="toggleOpen"><ArrowRightBold /></el-icon>
+            <el-icon class="pointer" v-if="!!isCollapse"  @click="toggleOpen"><ArrowLeftBold /></el-icon>
+            <el-icon class="pointer"  v-else @click="toggleOpen"><ArrowRightBold /></el-icon>
             <div class="nav-title">
                 <h2>لوحة التحكم</h2>
             </div>
@@ -17,9 +17,10 @@
                 </div>
                 <div class="nav-list-notify"></div>
             </div>
-            
         </nav>
-        <router-view/>
+        <div class="local">
+            <router-view/>
+        </div>
        </div>
     </div>
 </template>
@@ -44,19 +45,33 @@ const toggleOpen = () => isCollapse.value =!isCollapse.value
     display flex
     .slide
         max-width 250px
+        background-color hsla(0,0%,98%,.051) !important
+    .local
+       padding 20px
     .dashboard
         flex 1
+        background-color #fff
+        color #000
+
         .nav
             display flex
             align-items center
             padding 10px
+            background-color #F8F8F8
             justify-content space-between
+            border-bottom: 1px solid #000
+            margin-bottom: 10px
+
             // direction rtl
             &-title
                 margin-right 20px
+                h2
+                    font-size 16px
+                    font-weight bold
             &-list
                 margin-right auto
                 &-icon
                     display flex
-
+            .pointer
+                cursor pointer
 </style>
