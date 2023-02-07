@@ -57,9 +57,9 @@ const toggleOpen = () => isCollapse.value =!isCollapse.value
             display flex
             align-items center
             padding 10px
-            background-color #F8F8F8
+            // background-color #F8F8F8
             justify-content space-between
-            border-bottom: 1px solid #000
+            // border-bottom: 1px solid #000
             margin-bottom: 10px
 
             // direction rtl
