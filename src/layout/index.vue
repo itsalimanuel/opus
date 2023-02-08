@@ -45,13 +45,23 @@ const toggleOpen = () => isCollapse.value =!isCollapse.value
     display flex
     .slide
         max-width 250px
+        
         background-color hsla(0,0%,98%,.051) !important
     .local
        padding 20px
+       height calc(100vh - 70px)
+       overflow-y scroll
+       &::-webkit-scrollbar 
+        width: 5px;
+        // background red
+        &::-webkit-scrollbar-track
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: red
     .dashboard
         flex 1
-        background-color #fff
-        color #000
+        background-color #242424
+        // color #000
 
         .nav
             display flex
