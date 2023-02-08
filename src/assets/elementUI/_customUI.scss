@@ -7,3 +7,16 @@
 .el-button {
     width: 100%;
 }
+.el-table .cell{
+    text-align: right;
+    padding-right: 10px;
+}
+.el-select-dropdown__item{
+    text-align: right;
+}
+.el-table td.el-table__cell div{
+    color: #000
+}
+.el-table--fit{
+    border-radius: 0 0 10px 10px;
+}
