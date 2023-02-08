@@ -7,6 +7,7 @@ import MissionComponent from '@/components/mission/index.vue'
 
 const selectOption = ref('')
 const day = ref('')
+const missionOpen = ref(false)
 const optionsList = ref([
   {
     value: '1',
@@ -17,6 +18,11 @@ const optionsList = ref([
     label: 'تصميم تطبيق'
   }
 ])
+
+const openMission = () => {
+  missionOpen.value = true
+}
+
 </script>
 
 <template>
@@ -53,7 +59,7 @@ const optionsList = ref([
               :default-value="[new Date(2010, 9, 1), new Date(2010, 10, 1)]" />
           </div>
           <div class="--add">
-            <el-button type="primary">
+            <el-button @click="openMission" type="primary">
               <el-icon class="el-icon--right">
                 <Plus />
               </el-icon>
@@ -63,6 +69,9 @@ const optionsList = ref([
         </div>
       </div>
       <MissionComponent :height="300" />
+      <el-drawer direction="ltr" v-model="missionOpen" title="اضافة مهمة جديدة" :with-header="true">
+        <span>Hi there!</span>
+    </el-drawer>
     </div>
   </main>
 </template>
