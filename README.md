@@ -9,6 +9,6 @@
 </div>
 
 <p align="center"> لوحة تحكم مفتوحة المصدر  مبرمجة باستخدام</p>
-<p align="center"> @vitejs , @vuejs and @elementPlus</p>
+<p align="center"> https://vuejs.org , https://vitejs.dev/ and https://element-plus.org/zh-CN/</p>
 
 <p align="center">Give us a star and stay tuned</p>
