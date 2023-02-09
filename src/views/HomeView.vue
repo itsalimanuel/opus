@@ -19,6 +19,21 @@ const optionsList = ref([
   }
 ])
 
+const team = ref([
+  {
+    value: '1',
+    label: 'ايمن'
+  },
+  {
+    value: '2',
+    label: 'احمد'
+  },
+  {
+    value: '2',
+    label: 'معاذ'
+  }
+])
+
 const openMission = () => {
   missionOpen.value = true
 }
@@ -69,9 +84,28 @@ const openMission = () => {
         </div>
       </div>
       <MissionComponent :height="300" />
-      <el-drawer direction="ltr" v-model="missionOpen" title="اضافة مهمة جديدة" :with-header="true">
-        <span>Hi there!</span>
-    </el-drawer>
+      <el-drawer opos-color="primary" direction="ltr" v-model="missionOpen" title="اضافة مهمة جديدة"
+        :with-header="true">
+        <el-form label-position="top">
+          <el-form-item label="اسم المهنة">
+            <el-input placeholder="اسم المهنة"></el-input>
+          </el-form-item>
+          <el-form-item label="نوع المشروع">
+            <el-select v-model="selectOption" clearable placeholder="الخدمات">
+              <el-option v-for="option in optionsList" :key="option.value" :value="option.value"
+                :label="option.label"></el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item label="الفريق المشرف">
+            <el-select multiple placeholder="اختر فريقك">
+              <el-option v-for="person in team" :key="person.id" :label="person.label" :value="person.id"></el-option>
+            </el-select>
+          </el-form-item>
+          <div class="--auto-top">
+            <el-button button-color="primary">انشاء</el-button>
+          </div>
+        </el-form>
+      </el-drawer>
     </div>
   </main>
 </template>
