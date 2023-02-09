@@ -2,11 +2,14 @@
 // Importing the layout component.
 import Layout from '@/layout/index.vue'
 import LayoutLogin from '@/layout/loginLayout.vue'
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
 </script>
 
 <template>
-  <LayoutLogin v-if="this.$route.meta.layout == 'login'" />
-  <Layout v-if="this.$route.meta.layout == 'dashboard'" />
+  <LayoutLogin v-if="route.meta.layout == 'login'" />
+  <Layout v-if="route.meta.layout == 'dashboard'" />
 </template>
 
 <style scoped>
