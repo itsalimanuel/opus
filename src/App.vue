@@ -5,8 +5,8 @@ import LayoutLogin from '@/layout/loginLayout.vue'
 </script>
 
 <template>
-  <!-- <LayoutLogin/> -->
-  <Layout/>
+  <LayoutLogin v-if="this.$route.meta.layout == 'login'" />
+  <Layout v-if="this.$route.meta.layout == 'dashboard'" />
 </template>
 
 <style scoped>
