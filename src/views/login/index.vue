@@ -8,6 +8,27 @@ const login = reactive({
 
 })
 
+const rules = reactive({
+    username: [
+        { required: true, message: 'username required', trigger: 'blur' }
+    ],
+    password: [
+        { required: true, message: 'password required', trigger: 'blur' }
+    ]
+})
+
+const SubmitLogin = (login) => {
+    login.validate((val) => {
+        if (val) {
+            alert('validation')
+        } else {
+            alert('error')
+        }
+    })
+}
+
+
+
 </script>
 
 <template>
@@ -17,15 +38,15 @@ const login = reactive({
                 <h2>اهلا وسهلا بك في لوحة التحكم</h2>
             </div>
             <div class="login-form">
-                <el-form label-position="top">
-                    <el-form-item label="اسم المستخدم / البريد الالكتروني">
+                <el-form :rules="rules" ref="login" v-model="login" label-position="top">
+                    <el-form-item label="اسم المستخدم / البريد الالكتروني" prop="username">
                         <el-input size="large" v-model="login.username" placeholder="Enter your username"></el-input>
                     </el-form-item>
-                    <el-form-item label="كلمة المرور">
+                    <el-form-item label="كلمة المرور" prop="password">
                         <el-input size="large" v-model="login.password" type="password" show-password
                             placeholder="Enter your password"></el-input>
                     </el-form-item>
-                    <el-button size="large">دخول</el-button>
+                    <el-button @click="SubmitLogin('login')" size="large">دخول</el-button>
                 </el-form>
             </div>
         </div>

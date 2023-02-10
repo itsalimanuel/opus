@@ -26,8 +26,8 @@ const router = createRouter({
 
 const requireAuth = [
   '/',
-  '/dashboard',
-  '/about'
+  // '/dashboard',
+  // '/about'
 ]
 let access = '' /** your access or token key here */
 
